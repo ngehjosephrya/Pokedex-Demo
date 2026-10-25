@@ -1,56 +1,57 @@
-# Welcome to your Expo app 👋
+# Pokédex
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform Pokédex app built with Expo, React Native, and TypeScript. It
+loads the first 20 Pokémon from [PokéAPI](https://pokeapi.co/) and presents their
+names, primary types, and front and back sprites.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Browse the first 20 Pokémon returned by PokéAPI.
+- View each Pokémon's primary type and front/back sprites in the list.
+- Tap a Pokémon to open its details screen.
+- Load Pokémon data and sprites from PokéAPI over the internet.
 
-   ```bash
-   npm install
-   ```
+## Requirements
 
-2. Start the app
+- Node.js and npm
+- Expo Go on a device, or an Android emulator, iOS simulator, or web browser
+- An internet connection to retrieve Pokémon data and images
 
-   ```bash
-   npx expo start
-   ```
+## Getting started
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Install the dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Start the Expo development server:
 
-### Other setup steps
+```bash
+npm start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Use the options shown in the terminal or Expo Dev Tools to open the app in
+Expo Go, an emulator/simulator, or a web browser.
 
-## Learn more
+## Available scripts
 
-To learn more about developing your project with Expo, look at the following resources:
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the Expo development server. |
+| `npm run android` | Start the server and open the Android target. |
+| `npm run ios` | Start the server and open the iOS target. |
+| `npm run web` | Start the server for web. |
+| `npm run lint` | Run Expo linting. |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Project structure
 
-## Join the community
+- `src/app/index.tsx` — Pokémon list and PokéAPI list/detail requests.
+- `src/app/details.tsx` — Pokémon details screen.
+- `src/app/_layout.tsx` — Expo Router stack and screen presentation options.
 
-Join our community of developers creating universal apps.
+## Data source
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Pokémon information comes from the public PokéAPI REST API. The app requests
+`https://pokeapi.co/api/v2/pokemon?limit=20`, then fetches each returned Pokémon
+resource for its sprites and types. The API is not hosted by this project.
